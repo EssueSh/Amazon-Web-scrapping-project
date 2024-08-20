@@ -21,13 +21,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from twocaptcha import TwoCaptcha
 import time
 
-# Path to your local WebDriver executable
+# Please Insert Path to your local WebDriver executable
 webdriver_path = "D:/Downloads/chromedriver-win64 (1)/chromedriver-win64/chromedriver.exe"
 
-# Setup WebDriver
 driver = webdriver.Chrome(executable_path=webdriver_path)
 
-# Your 2Captcha API key
 api_key = 'YOUR_2CAPTCHA_API_KEY'
 
 def solve_captcha():
@@ -120,11 +118,9 @@ def save_to_csv_via_dataframe(all_product_links, filename="products.csv"):
     df.to_csv(filename, index=False, encoding='utf-8')  # Convert DataFrame to CSV
     print(f"\nCSV file '{filename}' created successfully with {len(df)} products.")
 
-# Example usage
 categories = ['Projectors' ,'Mobiles' , 'Tyres & Rims' , 'Car Electronics' , 'GPS Devices' , 'Car Care' , 'Ethnic Wear' , 'Lighting']
 all_links = scrape_multiple_categories(categories)
 
-# Save the results to a CSV file via DataFrame
 save_to_csv_via_dataframe(all_links)
 
 
